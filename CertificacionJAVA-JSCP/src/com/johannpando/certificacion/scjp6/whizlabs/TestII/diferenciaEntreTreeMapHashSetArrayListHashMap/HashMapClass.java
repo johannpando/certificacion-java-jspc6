@@ -3,6 +3,7 @@ package com.johannpando.certificacion.scjp6.whizlabs.TestII.diferenciaEntreTreeM
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -16,6 +17,9 @@ import java.util.Set;
  * 
  */
 public class HashMapClass {
+
+	HashMap<Integer, Persona> mapaPersonasUno = new HashMap<Integer, Persona>();
+	HashMap<Integer, Persona> mapaPersonasDos = new HashMap<Integer, Persona>();
 
 	/**
 	 * @param args
@@ -40,6 +44,57 @@ public class HashMapClass {
 
 		recorrerHashMapIterator(hashMap);
 
+		mapaPersonas();
+
+		HashMapClass hashMapClass = new HashMapClass();
+		hashMapClass.sobrescribiendoEquals();
+
+	}
+
+	public void sobrescribiendoEquals() {
+		System.out
+				.println("################# PROBANDO A SOBRESCRIBIR EQUALS ##################");
+
+		Persona personaUnica = new Persona("12345", "Pérez", "Juan");
+
+		mapaPersonasUno.put(1, personaUnica);
+		// mapaPersonasUno.put(2, new Persona("22222", "García", "Julio"));
+		// mapaPersonasUno.put(3, new Persona("33333", "Mendoza", "Juana"));
+
+		mapaPersonasDos.put(1, personaUnica);
+		// mapaPersonasDos.put(2, new Persona("22222", "García", "Julio"));
+		// mapaPersonasDos.put(3, new Persona("33333", "Mendoza", "Juana"));
+
+		System.out.println(mapaPersonasDos.equals(mapaPersonasUno));
+
+	}
+
+	private static void mapaPersonas() {
+		HashMap<Persona, List<Persona>> mapaPersonas = new HashMap<Persona, List<Persona>>();
+		Persona jp = new Persona("54211142G", "Pando", "Johann");
+		Persona l = new Persona("X4626146L", "Millán", "Susan");
+		Persona Gi = new Persona("A82371279", "Pando", "Giessel");
+		Persona Om = new Persona("123456789", "Nomberto", "Omar");
+
+		List<Persona> listaPersonas = new java.util.ArrayList<Persona>();
+		listaPersonas.add(jp);
+		listaPersonas.add(l);
+		listaPersonas.add(Gi);
+		listaPersonas.add(Om);
+
+		mapaPersonas.put(jp, listaPersonas);
+
+		eliminaPersonaPorPersona(jp, mapaPersonas);
+	}
+
+	private static void eliminaPersonaPorPersona(Persona p,
+			Map<Persona, List<Persona>> mapaPersonas) {
+
+		if (mapaPersonas.containsKey(p)) {
+			mapaPersonas.remove(p);
+		}
+
+		System.out.println(mapaPersonas.size());
 	}
 
 	private static void recorrerHashMapIterator(HashMap<Integer, String> hashMap) {
@@ -89,5 +144,38 @@ public class HashMapClass {
 		for (Integer integer : keySet) {
 			System.out.println(integer);
 		}
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((mapaPersonasDos == null) ? 0 : mapaPersonasDos.hashCode());
+		result = prime * result
+				+ ((mapaPersonasUno == null) ? 0 : mapaPersonasUno.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		HashMapClass other = (HashMapClass) obj;
+		if (mapaPersonasDos == null) {
+			if (other.mapaPersonasDos != null)
+				return false;
+		} else if (!mapaPersonasDos.equals(other.mapaPersonasDos))
+			return false;
+		if (mapaPersonasUno == null) {
+			if (other.mapaPersonasUno != null)
+				return false;
+		} else if (!mapaPersonasUno.equals(other.mapaPersonasUno))
+			return false;
+		return true;
 	}
 }

@@ -19,7 +19,7 @@ public class ArrayList {
 		 * String [] s = a.toArray (nuevo String [0]), el contenido de la matriz
 		 * de cadenas se imprimen.
 		 * */
-		String[] s = (String[]) a.toArray(new String[0]);
+		String[] s = (String[]) a.toArray(new String[new Integer(0)]);
 		for (String string : s) {
 			System.out.println(string);
 		}

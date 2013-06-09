@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 
 /**
  * <p>
- * Inglés
+ * Inglï¿½s
  * </p>
  * The compile method of the Pattern class compiles the given regular expression
  * into a pattern, then the matcher method creates a matcher that will match the
@@ -28,26 +28,26 @@ import java.util.regex.Matcher;
  * <p>
  * Castellano
  * </p>
- * El método de compilación de la clase Pattern compila la expresión regular
- * dada en un patrón, entonces el método matcher crea un comparador que
- * coincidirá con la entrada dada contra este modelo. El método de búsqueda
+ * El mï¿½todo de compilaciï¿½n de la clase Pattern compila la expresiï¿½n regular
+ * dada en un patrï¿½n, entonces el mï¿½todo matcher crea un comparador que
+ * coincidirï¿½ con la entrada dada contra este modelo. El mï¿½todo de bï¿½squeda
  * explora la secuencia de entrada en busca de la secuencia siguiente que
- * coincide con el patrón. El método devuelve el grupo de entrada basado en lo
- * anterior la única opción A es la correcta.
+ * coincide con el patrï¿½n. El mï¿½todo devuelve el grupo de entrada basado en lo
+ * anterior la ï¿½nica opciï¿½n A es la correcta.
  * 
- * Ahora vamos a analizar cómo la expresión regular dada ayuda en la extracción
- * de los identificadores de e-mails. El (\ w +) agrupación busca caracteres de
- * palabra, como lo indica el w \. El signo + indica que uno o más caracteres de
- * palabra debe aparecer. Esto debe ser seguido por un carácter literal @. El (\
- * W + \.) Grupos es similar, pero espera un período de seguimiento con el fin
- * de hacer una pareja. El período se ha scaped usando una barra invertida,
- * porque el carácter de punto en sí es una expresión regular meta-carácter (un
- * comodín que coincide con cualquier carácter).
+ * Ahora vamos a analizar cï¿½mo la expresiï¿½n regular dada ayuda en la extracciï¿½n
+ * de los identificadores de e-mails. El (\ w +) agrupaciï¿½n busca caracteres de
+ * palabra, como lo indica el w \. El signo + indica que uno o mï¿½s caracteres de
+ * palabra debe aparecer. Esto debe ser seguido por un carï¿½cter literal @. El (\
+ * W + \.) Grupos es similar, pero espera un perï¿½odo de seguimiento con el fin
+ * de hacer una pareja. El perï¿½odo se ha scaped usando una barra invertida,
+ * porque el carï¿½cter de punto en sï¿½ es una expresiï¿½n regular meta-carï¿½cter (un
+ * comodï¿½n que coincide con cualquier carï¿½cter).
  * 
- * La siguiente (\ W +) agrupación es idéntica a la primera agrupación - se ve
- * forn uno o más caracteres de palabra. Finalmente la expresión (\. \ W +) *
- * pregunta para que coincida con un punto seguido por uno o más caracteres de
- * palabra, y de acuerdo con esa combinación de cero o más veces.
+ * La siguiente (\ W +) agrupaciï¿½n es idï¿½ntica a la primera agrupaciï¿½n - se ve
+ * forn uno o mï¿½s caracteres de palabra. Finalmente la expresiï¿½n (\. \ W +) *
+ * pregunta para que coincida con un punto seguido por uno o mï¿½s caracteres de
+ * palabra, y de acuerdo con esa combinaciï¿½n de cero o mï¿½s veces.
  * 
  * @author Johann
  * 
@@ -66,17 +66,36 @@ public class Pattern {
 		java.util.regex.Pattern pattern = java.util.regex.Pattern
 				.compile(regex);
 
-		// Error de compilación: No existe el método matcher
+		// Error de compilaciï¿½n: No existe el mï¿½todo matcher
 		// java.util.regex.Pattern pattern2 = java.util.regex.Pattern
 		// .matcher(regex);
 
 		Matcher matcher = pattern.matcher(s);
 
-		// Error de compilación: No existe el método next
+		// Error de compilaciï¿½n: No existe el mï¿½todo next
 		// matcher.next()
 
 		while (matcher.find()) {
 			System.out.println("The e-mail id is: " + matcher.group());
 		}
+
+		masPattern();
+	}
+
+	private static void masPattern() {
+
+		String expresionRegular = "comer";
+
+		String cadena = "Â¿Puedo comer pizza ahora?";
+
+		java.util.regex.Pattern myPattern = java.util.regex.Pattern
+				.compile(expresionRegular);
+
+		Matcher matcher = myPattern.matcher(cadena);
+
+		while (matcher.find()) {
+			System.out.println(matcher.group());
+		}
+
 	}
 }

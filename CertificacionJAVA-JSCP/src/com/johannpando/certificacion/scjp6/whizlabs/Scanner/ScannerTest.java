@@ -26,8 +26,8 @@ public class ScannerTest {
 		MatchResult result = s.match();
 		for (int i = 1; i <= result.groupCount(); i++) {
 			System.out.println(result.group(i));
-			s.close();
 		}
+		s.close();
 	}
 
 }

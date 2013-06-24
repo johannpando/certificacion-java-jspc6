@@ -10,8 +10,8 @@ public class StringBuilderAdd {
 		for (int i = 1; i < 5; i++) {
 			sb.append("a");
 		}
-		// el nombre del método lo dice bastante claro:
-		// insert... por lo tanto imprimirá "aaaa123a"
+		// el nombre del mï¿½todo lo dice bastante claro:
+		// insert... por lo tanto imprimirï¿½ "aaaa123a"
 		sb.insert(4, "123");
 
 		System.out.println(sb);

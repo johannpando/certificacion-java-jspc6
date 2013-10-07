@@ -1,14 +1,19 @@
 package com.johannpando.certificacion.scjp6.dia.clasesAnonimas.clasesInternasEstaticas;
 
+
 public class Prueba {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// Instanciación de la clase estática
+		// IntanciaciÃ³n de una clase Interna no estÃ¡tica:
+		// Externa ex = new Externa();
+		// Externa.Interna in = ex.new Interna();
+
+		// Instanciaciï¿½n de la clase estï¿½tica
 		Externa.Interna ej = new Externa.Interna();
-		ej.muestra();// Llamada al método de la clase estática.
+		ej.muestra();// Llamada al mï¿½todo de la clase estï¿½tica.
 	}
 
 }

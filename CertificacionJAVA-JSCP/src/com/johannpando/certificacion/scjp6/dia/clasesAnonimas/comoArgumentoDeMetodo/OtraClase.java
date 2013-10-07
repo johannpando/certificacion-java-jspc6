@@ -6,6 +6,7 @@ public class OtraClase {
 
 	public void metodo(Operaciones operaciones) {
 		System.out.println("locura total");
+		operaciones.rotar();
 
 	}
 

@@ -16,7 +16,7 @@ public class Externa {
 
 			@Override
 			public void rotar() {
-				// TODO Auto-generated method stub
+				System.out.println("Imprime rotar?");
 
 			}
 
